@@ -23,11 +23,20 @@ from django.contrib import messages
 #         return render(request, 'index.html', {'img': img})
 #     return render(request, 'index.html')
 
+# def screenshot(request):
+#     if request.method == "POST":
+#         ss = pyautogui.screenshot()
+#         img = f'myimg{random.randint(1000, 9999)}.png'
+#         ss.save(settings.MEDIA_ROOT/img)
+#         messages.success(request, 'screenshot has been taken')
+#         return render(request, 'index.html', {'img': img})
+#     return render(request, 'index.html')
+
 def screenshot(request):
     if request.method == "POST":
         ss = pyautogui.screenshot()
         img = f'myimg{random.randint(1000, 9999)}.png'
         ss.save(settings.MEDIA_ROOT/img)
-        messages.success(request, 'screenshot has been taken')
+        messages.success(request, 'Screenshot has been taken.')
         return render(request, 'index.html', {'img': img})
     return render(request, 'index.html')
